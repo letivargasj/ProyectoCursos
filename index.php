@@ -14,41 +14,74 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="/stylehome.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+        
         <title>Cursos en linea</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./prueba_agregar_curso.php">Agregar Cursos</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="./login.php">Login</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="./controlador/controlador_cerrarsession.php">Cerrar Sesión</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
+        <div class="principal">
+            <div class="navegador" id="navbar" >
+                <a id="logo">
+                    <img class="imgLogo" src="./images/logo2.png" id="logo">
+                </a>
+                <a class="nav" href="#" id="home">Home</a>
+                <a class="nav" href="#" id="misCursos">Mis cursos</a>
+                <a class="nav" href="#" id="agregarCurso" >Agregar Curso</a>
+                <a class="nav" href="#" id="cursosImpartidos">Cursos Impartidos</a>
+                <a class="nav" href="#" id="nosotros">Nosotros</a>
+                <a class="nav" href="#" id="perfil">Perfil</a>
+            </div>
+            <div class="menuCategorias">
+                <div class="cat" id="todos">Todos</div> 
+                <div class="cat" id="exactas">Ciencias exactas</div>            
+                <div class="cat" id="naturales">Ciencias naturales</div>
+                <div class="cat" id="humanidades">Humanidades</div>
+                <div class="cat" id="geografia">Geografia</div>
+                <div class="cat" id="historia">Historia</div>
+                <div class="cat" id="idiomas">Idiomas</div>
+                <div class="cat" id="Arte">Arte</div>
+            </div>
+            <div class="contenedor">
+                <h1> USUARIO
+                    <?php
+                        echo $_SESSION["usuario"] ;
+                    ?>
+                </h1>
+                <div class="card" style="width: 20%">
+                    <img src="" class="card-img-top imgStyle" >
+                    <div class="card-body cardStyle">
+                    <p class="card-text">
+                        <button type="button" class="btn btn-dark" id="btnCurso" value="Inscribir">
+                            Inscribirme
+                        </button>
+                        <div class="cursoNombre" name="cursoNombre">Matematicas</div>
+                        <div class="cursoDuracion" name="cursoDuracion">20hrs</div>
+                        <div class="cursoMaestro" name="cursoMaestro">Juan Lopez</div>
+                        <div class="cursoCategoria" name="cursoCategoria">Ciencias exactas</div>
+                    </p>
+                    </div>
                 </div>
             </div>
-        </nav>
-        <h1> USUARIO
-            <?php
-                echo $_SESSION["usuario"] ;
-            ?>
-        </h1>
+
+        </div>                        
+        <template id="cardCursos">
+            <div class="card" style="width: 20%">
+                <img src="" class="card-img-top imgStyle" >
+                <div class="card-body cardStyle">
+                <p class="card-text">
+                    <button type="button" class="btn btn-dark" id="btnCurso">
+                        Inscribirme
+                    </button>
+                    <div class="cursoNombre"></div>
+                    <div class="cursoDuracion"></div>
+                    <div class="cursoMaestro"></div>
+                    <div class="cursoCategoria"></div>
+                </p>
+                </div>
+            </div>
+        </template>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     </body>
