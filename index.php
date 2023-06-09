@@ -44,7 +44,20 @@
                 <div class="cat" id="Arte">Arte</div>
             </div>
             <div class="contenedor">
-
+                <div class="card" style="width: 20%">
+                    <img src="" class="card-img-top imgStyle" >
+                    <div class="card-body cardStyle">
+                    <p class="card-text">
+                        <button type="button" class="btn btn-dark" id="btnCurso" value="Inscribir">
+                            Inscribirme
+                        </button>
+                        <div class="cursoNombre" name="cursoNombre">Matematicas</div>
+                        <div class="cursoDuracion" name="cursoDuracion">20hrs</div>
+                        <div class="cursoMaestro" name="cursoMaestro">Juan Lopez</div>
+                        <div class="cursoCategoria" name="cursoCategoria">Ciencias exactas</div>
+                    </p>
+                    </div>
+                </div>
             </div>
 
         </div>                        
