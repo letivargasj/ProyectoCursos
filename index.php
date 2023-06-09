@@ -1,9 +1,9 @@
 <?
+    session_start();
     include("conexion.php");
     $conn = conectar();
     $sql  = "SELECT * FROM estudiante";
     $query = mysqli_query($conn, $sql);
-   
 
 ?>
 <!doctype html>
@@ -44,6 +44,11 @@
                 <div class="cat" id="Arte">Arte</div>
             </div>
             <div class="contenedor">
+                <h1> USUARIO
+                    <?php
+                        echo $_SESSION["usuario"] ;
+                    ?>
+                </h1>
                 <div class="card" style="width: 20%">
                     <img src="" class="card-img-top imgStyle" >
                     <div class="card-body cardStyle">
@@ -77,7 +82,6 @@
                 </div>
             </div>
         </template>
-
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
