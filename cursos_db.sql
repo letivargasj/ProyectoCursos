@@ -6,7 +6,9 @@ CREATE TABLE estudiante (
   est_usuario varchar(20) NOT NULL,
   est_nombre varchar(50) NOT NULL,
   est_apellido varchar(50) NOT NULL,
+  est_con VARCHAR(30) NOT NULL,
   est_correo varchar(50) NOT NULL,
+  est_tipo VARCHAR(5) DEFAULT "est",
   PRIMARY KEY (est_usuario),
   UNIQUE KEY (est_correo)
 );
@@ -16,6 +18,8 @@ CREATE TABLE maestro (
   mae_nombre varchar(50) NOT NULL,
   mae_apellido varchar(50) NOT NULL,
   mae_correo varchar(50) NOT NULL,
+  mae_con VARCHAR(30) NOT NULL,
+  mae_tipo VARCHAR(5) DEFAULT "mae",
   PRIMARY KEY (mae_usuario),
   UNIQUE KEY (mae_correo)
 );
@@ -47,3 +51,8 @@ CREATE TABLE detalle (
     	REFERENCES `estudiante` (`est_usuario`) 
     	ON DELETE CASCADE ON UPDATE CASCADE
 );
+INSERT INTO maestro(mae_usuario, mae_con, mae_correo, mae_nombre, mae_apellido) VALUES("LETYV", "CONLETYV", "lety@lety.com", "Lety", "Vargas");
+select * from maestro;
+
+INSERT INTO estudiante(est_usuario, est_con, est_correo, est_nombre, est_apellido) VALUES("CARLOSG", "CONCARLOSG", "carlos@carlos.com", "Carlos", "Garca");
+select * from estudiante;
