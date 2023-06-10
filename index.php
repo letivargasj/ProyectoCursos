@@ -2,7 +2,7 @@
     session_start();
     include("conexion.php");
     $conn = conectar();
-    $sql  = "SELECT * FROM estudiante";
+    $sql  = "SELECT * FROM curso";
     $query = mysqli_query($conn, $sql);
 
 ?>
@@ -14,11 +14,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="/stylehome.css">
+        <link rel="stylesheet" href="/css/stylehome.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         
-        <title>Cursos en linea</title>
+        <title>ENSIGNA</title>
     </head>
     <body>
         <div class="principal">
@@ -26,11 +26,11 @@
                 <a id="logo">
                     <img class="imgLogo" src="./images/logo2.png" id="logo">
                 </a>
-                <a class="nav" href="#" id="home">Home</a>
-                <a class="nav" href="#" id="misCursos">Mis cursos</a>
-                <a class="nav" href="#" id="agregarCurso" >Agregar Curso</a>
-                <a class="nav" href="#" id="cursosImpartidos">Cursos Impartidos</a>
-                <a class="nav" href="#" id="nosotros">Nosotros</a>
+                <a class="nav" href="/index.php" id="home">Home</a>
+                <a class="nav" href="/miscursos.php" id="misCursos">Mis cursos</a>
+                <a class="nav" href="/agregarcurso.php" id="agregarCurso" >Agregar Curso</a>
+                <a class="nav" href="/cursosimpartidos.php" id="cursosImpartidos">Cursos Impartidos</a>
+                <a class="nav" href="/nosotros.php" id="nosotros">Nosotros</a>
                 <a class="nav" href="#" id="perfil">Perfil</a>
             </div>
             <div class="menuCategorias">
@@ -49,39 +49,81 @@
                         echo $_SESSION["usuario"] ;
                     ?>
                 </h1>
-                <div class="card" style="width: 20%">
+                
+                <table class="table">
+                    <thead class="table-success table-striped">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Duracion</th>
+                            <th>Categoria</th>
+                            <th>Imagen</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            while($row=mysqli_fetch_array($query)){
+                        ?>
+                            <tr>
+                                <td>
+                                    <?php echo $row['cur_nombre'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row['cur_duracion'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row['cur_categoria'] ?>
+                                </td>
+                                <td>
+                                    <?php echo $row['cur_imagen'] ?>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary">Inscribirme</a>
+                                </td>
+                            </tr>
+
+                            <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
+
+
+                <div class="card" style="width: 30%">
                     <img src="" class="card-img-top imgStyle" >
                     <div class="card-body cardStyle">
                     <p class="card-text">
+                    <?php
+                        while($row=mysqli_fetch_array($query)){
+                    ?>
                         <button type="button" class="btn btn-dark" id="btnCurso" value="Inscribir">
                             Inscribirme
                         </button>
-                        <div class="cursoNombre" name="cursoNombre">Matematicas</div>
-                        <div class="cursoDuracion" name="cursoDuracion">20hrs</div>
-                        <div class="cursoMaestro" name="cursoMaestro">Juan Lopez</div>
-                        <div class="cursoCategoria" name="cursoCategoria">Ciencias exactas</div>
+                        <div class="cursoImagen" name="cursoImagen">
+                            <?php echo $row['cur_imagen'] ?>
+                        </div>
+                        <div class="cursoNombre" name="cursoNombre">
+                            <?php echo $row['cur_nombre'] ?>
+                        </div>
+                        <div class="cursoDuracion" name="cursoDuracion">
+                            <?php echo $row['cur_duracion'] ?>
+                        </div>
+                        <div class="cursoMaestro" name="cursoMaestro">
+
+                        </div>
+                        <div class="cursoCategoria" name="cursoCategoria">
+                            <?php echo $row['cur_categoria'] ?>
+                        </div>
+                    <?php
+                        }
+                    ?>
                     </p>
                     </div>
                 </div>
             </div>
 
         </div>                        
-        <template id="cardCursos">
-            <div class="card" style="width: 20%">
-                <img src="" class="card-img-top imgStyle" >
-                <div class="card-body cardStyle">
-                <p class="card-text">
-                    <button type="button" class="btn btn-dark" id="btnCurso">
-                        Inscribirme
-                    </button>
-                    <div class="cursoNombre"></div>
-                    <div class="cursoDuracion"></div>
-                    <div class="cursoMaestro"></div>
-                    <div class="cursoCategoria"></div>
-                </p>
-                </div>
-            </div>
-        </template>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     </body>
