@@ -21,13 +21,13 @@ if(!empty($_SESSION["usuario"])){
     </head>
     <body>
       <div>
-        <h1>Login </h1>
+
       </div> 
      <section class="vh-100">
         <div class="container-fluid h-custom">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              <img src="./images/login.jpg"
                 class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
@@ -54,7 +54,7 @@ if(!empty($_SESSION["usuario"])){
                 </div>
 
                 <div class="text-center text-lg-start mt-4 pt-2">
-                  <input name="btningresar" class="btn btn-primary btn-lg " type="submit" value="Ingresar"
+                  <input name="btningresar" class="btn btn-dark btn-lg " type="submit" value="Ingresar"
                         style="padding-left: 2.5rem; padding-right: 2.5rem;">
                   <p class="small fw-bold mt-2 pt-1 mb-0">No tienes una cuenta? <a href="./registrarse.php"
                       class="link-danger">Registrarse</a></p>
@@ -64,17 +64,9 @@ if(!empty($_SESSION["usuario"])){
             </div>
           </div>
         </div>
-        <div
-          class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-          <!-- Copyright -->
-          <div class="text-white mb-3 mb-md-0">
-            Copyright © 2020. All rights reserved.
-          </div>
-          <!-- Copyright -->
-
-          <!-- Right -->
-
-        </div>
+        <footer>
+            <h2 class="footer">Todos los Derechos Reservados &copy; 2023 Ensigna</h2>
+        </footer>
       </section>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
