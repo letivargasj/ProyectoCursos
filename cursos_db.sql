@@ -29,6 +29,7 @@ CREATE TABLE curso (
   cur_duracion FLOAT(11) NOT NULL COMMENT "La duración del curso en horas",
   cur_categoría VARCHAR(50) NOT NULL,
   cur_mae_id VARCHAR(20) NOT NULL,
+  cur_imagen VARCHAR(30) NOT NULL,
   PRIMARY KEY (cur_nombre),
   CONSTRAINT fk_curso_maestro
     	FOREIGN KEY (cur_mae_id) 
