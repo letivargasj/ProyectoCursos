@@ -13,6 +13,8 @@
     #$sql  = "SELECT * FROM curso";
     #$query = mysqli_query($conn, $sql);
 
+    
+
 ?>
 <!doctype html>
 <html lang="en">

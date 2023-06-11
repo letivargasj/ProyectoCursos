@@ -15,6 +15,7 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="/css/stylehome.css">
+        <link rel="stylesheet" href="/css/cursosimpartidos.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         
@@ -35,7 +36,6 @@
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Perfil
                     </a>
-
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="./controlador/controlador_cerrarsession.php">Salir</a></li>
                     </ul>
@@ -52,86 +52,45 @@
                 <div class="cat" id="idiomas">Idiomas</div>
                 <div class="cat" id="Arte">Arte</div>
             </div>
+
+            
             <div class="contenedor">
-                <h1> USUARIO
-                    <?php
-                        echo $_SESSION["usuario"] ;
-                    ?>
-                </h1>
+                <div class="buscador" id="buscador" >
+                    <input type="text" id="inputBuscador" class="inputBuscador" placeholder="Escribe el nombre de la materia">
+                </div>
                 
-                <table class="table">
-                    <thead class="table-success table-striped">
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Duracion</th>
-                            <th>Categoria</th>
-                            <th>Imagen</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <div class="cartaCurso">
+                    <div class="cursos">
+                        <?php 
+                            while($row = mysqli_fetch_array($query)){
+                        ?>
+                        <div class="contenedor-card">
+                        
+                            <div class="img-curso">
+                                <img src="<?php echo $row['cur_images'] ?>" class="image-curso">
+                            </div>
+                            <div class="titulo-curso">
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_nombre'] ?></h2>
+                            </div>
+                            <div class="categoria-curso">
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_categoria'] ?></h2>
+                            </div>
+                            <div class="duración-curso">
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
+                            </div>
+                            <div class="botones-curso">
+                                <a href="#" class="btn-curso borrar">
+                                    Inscribirme
+                                </a>
+                            </div>
+                        </div>
                         <?php
-                            while($row=mysqli_fetch_array($query)){
-                        ?>
-                            <tr>
-                                <td>
-                                    <?php echo $row['cur_nombre'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $row['cur_duracion'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $row['cur_categoria'] ?>
-                                </td>
-                                <td>
-                                    <?php echo $row['cur_imagen'] ?>
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary">Inscribirme</a>
-                                </td>
-                            </tr>
-
-                            <?php
                             }
-                        ?>
-                    </tbody>
-                </table>
-
-
-                <div class="card" style="width: 30%">
-                    <img src="" class="card-img-top imgStyle" >
-                    <div class="card-body cardStyle">
-                    <p class="card-text">
-                    <?php
-                        while($row=mysqli_fetch_array($query)){
-                    ?>
-                        <button type="button" class="btn btn-dark" id="btnCurso" value="Inscribir">
-                            Inscribirme
-                        </button>
-                        <div class="cursoImagen" name="cursoImagen">
-                            <?php echo $row['cur_imagen'] ?>
-                        </div>
-                        <div class="cursoNombre" name="cursoNombre">
-                            <?php echo $row['cur_nombre'] ?>
-                        </div>
-                        <div class="cursoDuracion" name="cursoDuracion">
-                            <?php echo $row['cur_duracion'] ?>
-                        </div>
-                        <div class="cursoMaestro" name="cursoMaestro">
-
-                        </div>
-                        <div class="cursoCategoria" name="cursoCategoria">
-                            <?php echo $row['cur_categoria'] ?>
-                        </div>
-                    <?php
-                        }
-                    ?>
-                    </p>
+                        ?> 
                     </div>
                 </div>
             </div>
-
-        </div>                        
+        </div>       
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
