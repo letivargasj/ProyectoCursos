@@ -65,7 +65,7 @@
                     <input type="file" name="cur_imagen" class="form-control mb-3" placeholder="Nombre del curso" >
                     
                     <input name="btninsertar" class="btn btn-primary btn-lg " type="submit" value="Insertar"
-                          style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                          style="padding-left: 2.5rem; padding-right: 2.5rem; ">
                     
                 </form>
             </div>
