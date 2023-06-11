@@ -78,6 +78,22 @@ body {
     background-color: whitesmoke;
 }
 
+.buscador {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+input .inputBuscador{
+    width: 70%;
+    border-radius: 20px;
+    border: inset;
+}
 footer{
     background: #3C3C3C;
     text-align: center;
@@ -89,3 +105,4 @@ footer{
     font-size: 10px;
     color: white;
 }
+
