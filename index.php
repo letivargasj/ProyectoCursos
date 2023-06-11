@@ -14,8 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="/css/stylehome.css">
-        <link rel="stylesheet" href="/css/cursosimpartidos.css">
+        <link rel="stylesheet" href="/css/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         
@@ -50,24 +49,23 @@
                 <div class="cat" id="geografia">Geografia</div>
                 <div class="cat" id="historia">Historia</div>
                 <div class="cat" id="idiomas">Idiomas</div>
-                <div class="cat" id="Arte">Arte</div>
+                <div class="cat" id="arte">Arte</div>
             </div>
-
             
             <div class="contenedor">
                 <div class="buscador" id="buscador" >
+                    <h3>Cursos abiertos</h3>
                     <input type="text" id="inputBuscador" class="inputBuscador" placeholder="Escribe el nombre de la materia">
-                </div>
-                
+                </div> 
                 <div class="cartaCurso">
+                    
                     <div class="cursos">
                         <?php 
                             while($row = mysqli_fetch_array($query)){
                         ?>
                         <div class="contenedor-card">
-                        
-                            <div class="img-curso">
-                                <img src="<?php echo $row['cur_images'] ?>" class="image-curso">
+                            <div class="image-curso">
+                                <img src="./images/math.jpg" class="image-curso">
                             </div>
                             <div class="titulo-curso">
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_nombre'] ?></h2>
@@ -75,18 +73,20 @@
                             <div class="categoria-curso">
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_categoria'] ?></h2>
                             </div>
-                            <div class="duración-curso">
+                            <div class="duracion-curso">
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
                             </div>
                             <div class="botones-curso">
-                                <a href="#" class="btn-curso borrar">
+                                <a href="#" class="btn-curso inscribirme">
                                     Inscribirme
                                 </a>
                             </div>
                         </div>
+                         
                         <?php
                             }
                         ?> 
+                        
                     </div>
                 </div>
             </div>
