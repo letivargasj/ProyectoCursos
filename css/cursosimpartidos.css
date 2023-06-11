@@ -1,3 +1,4 @@
+
 img{
     width: 100%;
 }
@@ -55,7 +56,7 @@ img{
 }
 
 .contenedor-card .titulo-curso-h2{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: custom,Arial, Helvetica, sans-serif;
     font-size: 22px;
     font-weight: bold;
 }
@@ -77,39 +78,21 @@ img{
 .botones-curso{
     width: 100%;
     text-align: center;
-}
-
-.btn-curso{
-    display: inline-block;
-    padding: 10px;
-    border-radius: 10px;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;font-family: Arial, Helvetica, sans-serif;
-}
-
-.info{
-    border: 1px solid green;
-    color: green;
-    transition: all .6s ease;
+    margin-top:30px ;
+    border-top:2px solid #ccc;
 }
 
 .borrar{
-    border: 1px solid red;
+    margin-top: 5px;
+    padding: 15px;
+    font-size: 30px;
     color: red;
-    transition: all .6s ease;
-}
-
-.info:hover{
-    background: green;
-    color: white;
-    border: 1px solid white;
 }
 
 .borrar:hover{
-    background: red;
-    color: white;
-    border: 1px solid white;
+    color: red;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.05);
+    border-radius: 100%;
 }
 
