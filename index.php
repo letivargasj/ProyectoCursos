@@ -94,7 +94,7 @@
                     <div class="card-body cardStyle">
                     <p class="card-text">
                     <?php
-                        while($row=mysqli_fetch_array($query)){
+                        foreach($cur_nombre as $cur_nombre):
                     ?>
                         <button type="button" class="btn btn-dark" id="btnCurso" value="Inscribir">
                             Inscribirme
@@ -103,7 +103,7 @@
                             <?php echo $row['cur_imagen'] ?>
                         </div>
                         <div class="cursoNombre" name="cursoNombre">
-                            <?php echo $row['cur_nombre'] ?>
+                            <?php echo $cur_nombre['cur_nombre'] ?>
                         </div>
                         <div class="cursoDuracion" name="cursoDuracion">
                             <?php echo $row['cur_duracion'] ?>
@@ -115,7 +115,7 @@
                             <?php echo $row['cur_categoria'] ?>
                         </div>
                     <?php
-                        }
+                        endforeach;
                     ?>
                     </p>
                     </div>
