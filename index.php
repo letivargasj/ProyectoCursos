@@ -67,13 +67,13 @@
                         <div class="contenedor-card">
                         
                             <div class="img-curso">
-                                <img src="<?php echo $row['cur_images'] ?>" class="image-curso">
+                                <img src="<?php echo $row['cur_imagen'] ?>" class="image-curso">
                             </div>
                             <div class="titulo-curso">
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_nombre'] ?></h2>
                             </div>
                             <div class="categoria-curso">
-                                <h2 class="titulo-curso-h2"><?php echo $row['cur_categoria'] ?></h2>
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_categoría'] ?></h2>
                             </div>
                             <div class="duración-curso">
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
