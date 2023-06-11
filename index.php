@@ -31,7 +31,16 @@
                 <a class="nav" href="/agregarcurso.php" id="agregarCurso" >Agregar Curso</a>
                 <a class="nav" href="/cursosimpartidos.php" id="cursosImpartidos">Cursos Impartidos</a>
                 <a class="nav" href="/nosotros.php" id="nosotros">Nosotros</a>
-                <a class="nav" href="#" id="perfil">Perfil</a>
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Perfil
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="./controlador/controlador_cerrarsession.php">Salir</a></li>
+                    </ul>
+                </div>
+                <a class="nav" href="./login.php" id="login">Login</a>
             </div>
             <div class="menuCategorias">
                 <div class="cat" id="todos">Todos</div> 
@@ -125,7 +134,7 @@
         </div>                        
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 
 </html>

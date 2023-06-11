@@ -1,9 +1,17 @@
 <?
     session_start();
-    include("conexion.php");
-    $conn = conectar();
-    $sql  = "SELECT * FROM curso";
-    $query = mysqli_query($conn, $sql);
+    include "conexion.php";
+
+    if(empty($_SESSION["usuario"])){
+        header("location: login.php");
+    }
+
+    if($_SESSION["tipo"] == "est"){
+        header("location: index.php");
+    }
+    #$conn = conectar();
+    #$sql  = "SELECT * FROM curso";
+    #$query = mysqli_query($conn, $sql);
 
 ?>
 <!doctype html>
@@ -35,7 +43,11 @@
             </div>
             <div class="formulario">
                 <h1>Agrega un curso nuevo</h1>
-                <form action="insertar.php" method="post">
+                <form method="post" action="">
+                        
+                        <?php
+                        include "./insertar.php" ;
+                        ?>
                     <input type="text" name="cur_nombre" class="form-control mb-3" placeholder="Escribe el nombre" >
                     <input type="text" name="cur_duracion" class="form-control mb-3" placeholder="Escribe la duración" >
                     <select type="text" name="cur_categoria" class="form-select mb-3" >
@@ -49,12 +61,14 @@
                         <option value="Arte">Arte</option>
                     </select>
                     <input type="file" name="cur_imagen" class="form-control mb-3" placeholder="Nombre del curso" >
-                    <input type="submit" value="Insertar" class="btn btn-primary">
+                    
+                    <input name="btninsertar" class="btn btn-primary btn-lg " type="submit" value="Insertar"
+                          style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                    
                 </form>
             </div>
         </div>
             
-                <form action="agregarcurso.php" method="get"></form>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
