@@ -61,9 +61,9 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="./controlador/controlador_cerrarsession.php">Salir</a></li>
+                        <li><a class="dropdown-item" href="./login.php">Login</a></li>
                     </ul>
                 </div>
-                <a class="nav" href="./login.php" id="login">Login</a>
             </div>
            
             <div class="filtros">
@@ -88,6 +88,7 @@
                     >
                     <input type="submit" name="btnFiltro" class="btn btn-dark" id="btnFiltrar" value="Buscar">
                 </form>
+
             </div>
                 
             <div class="contenedorHome">
