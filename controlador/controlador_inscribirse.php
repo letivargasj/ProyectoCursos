@@ -10,8 +10,9 @@ if(!empty($_POST["btninscribirse"])){
             header("location: ../index.php");
         }
 
-    $usuario = $_SESSION["usuario"]; ;
+    $usuario = $_SESSION["usuario"]; 
     $curso = $row['cur_nombre'] ;
+
     $conn = conectar();
     $sql  = "INSERT INTO detalle (det_cur_id, det_est_id) VALUES('$curso', '$usuario');";
     $query = mysqli_query($conn, $sql);
