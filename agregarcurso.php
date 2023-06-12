@@ -44,7 +44,10 @@
                 <a class="nav" href="#" id="perfil">Perfil</a>
             </div>
             <div class="formulario">
-                <h1>Agrega un curso nuevo</h1>
+                <div class="formulario-header">
+                    <h1>Agrega un curso nuevo</h1>
+                    <div class="form-img"><img src="./images/logo.png" alt="logo"></div>
+                </div>
                 <form method="post" action="">
                     <?php
                     include "./insertar.php" ;
@@ -67,9 +70,9 @@
                     </select>
                     <input type="file" name="cur_imagen" class="form-control mb-3" placeholder="Nombre del curso" >
                     
-                    <input name="btninsertar" class="btn btn-primary btn-lg " type="submit" value="Insertar"
+                   <div class="centrar-btn"> <input name="btninsertar" class="btn btn-primary btn-lg btn-insertar" type="submit" value="Insertar"
                           style="padding-left: 2.5rem; padding-right: 2.5rem; ">
-                    
+                    </div>
                 </form>
             </div>
             <footer class="footer">
