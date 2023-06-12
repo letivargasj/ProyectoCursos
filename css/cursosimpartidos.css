@@ -77,39 +77,36 @@ img{
 .botones-curso{
     width: 100%;
     text-align: center;
+    border-top: 1px solid #ccc;
 }
 
-.btn-curso{
-    display: inline-block;
-    padding: 10px;
-    border-radius: 10px;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;font-family: Arial, Helvetica, sans-serif;
-}
-
-.info{
-    border: 1px solid green;
-    color: green;
-    transition: all .6s ease;
-}
-
-.borrar{
-    border: 1px solid red;
+.botones-curso .borrar{
+    margin-top: 10px;
+    font-size: 25px;
     color: red;
-    transition: all .6s ease;
+    padding: 10px;
 }
 
-.info:hover{
-    background: green;
-    color: white;
-    border: 1px solid white;
+.botones-curso .borrar:hover{
+   border-radius: 100%;
+   background: rgba(0,0,0,.05);
+   cursor: pointer;
 }
 
-.borrar:hover{
-    background: red;
-    color: white;
-    border: 1px solid white;
+.footer-cursosimpartidos{
+    margin: 0px auto;
+    height: 50px;
+    width: 100%;
+    background: #00262B;
 }
+
+.footer-cursosimpartidos h2{
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.footer-cursosimpartidos h2 span{
+    color: #D23228;
+}
+
 

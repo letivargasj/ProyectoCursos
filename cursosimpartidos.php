@@ -21,6 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/cursosimpartidos.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0acc97b01c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="principal">
@@ -50,30 +51,23 @@
 
             <div class="contenedor-card">
                 <div class="img-curso">
-                    <img src="./images/math.jpg" alt="Matemáticas" class="image-curso">
+                    <img src="./images/categorias-img/ciencias-naturales.jpg" alt="Matemáticas" class="image-curso">
                 </div>
                 <div class="titulo-curso">
                     <h2 class="titulo-curso-h2">Matemáticas 1° Grado</h2>
                 </div>
                 <div class="descripcion-curso">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, voluptates?</p>
                     <p>Duración: <span class="duracion"> 30 horas </span></p>
                 </div>
                 <div class="botones-curso">
-                    <a href="#" class="btn-curso info">
-                        Información
-                    </a>
-
-                    <a href="#" class="btn-curso borrar">
-                        Quitar Curso
-                    </a>
+                    <i class="fa-regular fa-trash-can borrar"></i>
                 </div>
             </div>
 
         </section>
 
-        <footer>
-            <h2 class="title-footer">Todos los Derechos Reservados &copy; 2023 Ensigna</h2>
+        <footer class="footer-cursosimpartidos">
+            <h2>Todos los derechos reservados &copy; 2023 | <span> Ensigna </span></h2>
         </footer>
     </div>
 </body>
