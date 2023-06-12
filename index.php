@@ -115,7 +115,7 @@
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
                             </div>
                             <div class="botones-curso">
-                                <a href="./controlador/controlador_inscribirse.php?id=<?php echo $row['cur_nombre']?>" 
+                                <a href="inscribirse.php?id=<?php echo $row['cur_nombre']?>" 
                                     
                                     class="btn-curso inscribirme">
                                     Inscribirme
