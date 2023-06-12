@@ -115,14 +115,56 @@
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
                             </div>
                             <div class="botones-curso">
-                                <a href="#" class="btn-curso inscribirme">
-                                    Inscribirme
-                                </a>
+                                <form method="post" action="">
+                                    <?php
+                                    include("controlador/controlador_inscribirse.php");
+                                    ?>
+                                    <input name="btninscribirse" class="btn btn-primary btn-lg " type="submit" value="Inscribirse"
+                                            style="padding-left: 2.5rem; padding-right: 2.5rem; ">
+                    
+                                </form>
                             </div>
                         </div>
                         <?php
                             }
+<<<<<<< HEAD
+                        ?>
+                    </tbody>
+                </table>
+
+
+                <div class="card" style="width: 30%">
+                    <img src="" class="card-img-top imgStyle" >
+                    <div class="card-body cardStyle">
+                    <p class="card-text">
+                    <?php
+                        foreach($cur_nombre as $cur_nombre):
+                    ?>
+                        <button type="button" class="btn btn-dark" id="btnCurso" value="Inscribir">
+                            Inscribirme
+                        </button>
+                        <div class="cursoImagen" name="cursoImagen">
+                            <?php echo $row['cur_imagen'] ?>
+                        </div>
+                        <div class="cursoNombre" name="cursoNombre">
+                            <?php echo $cur_nombre['cur_nombre'] ?>
+                        </div>
+                        <div class="cursoDuracion" name="cursoDuracion">
+                            <?php echo $row['cur_duracion'] ?>
+                        </div>
+                        <div class="cursoMaestro" name="cursoMaestro">
+
+                        </div>
+                        <div class="cursoCategoria" name="cursoCategoria">
+                            <?php echo $row['cur_categoria'] ?>
+                        </div>
+                    <?php
+                        endforeach;
+                    ?>
+                    </p>
+=======
                         ?> 
+>>>>>>> 6a142e4c16f14a217fd2297453bef23663610206
                     </div>
             </div>
             <footer class="footer">

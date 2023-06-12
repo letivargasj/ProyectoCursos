@@ -39,10 +39,9 @@ CREATE TABLE curso (
 
 
 CREATE TABLE detalle (
-  det_id int(11) NOT NULL AUTO_INCREMENT,
   det_cur_id varchar(100) NOT NULL,
   det_est_id varchar(20) NOT NULL,
-  PRIMARY KEY (det_id),
+  PRIMARY KEY (det_cur_id, det_est_id),
   CONSTRAINT `fk_detalle_curso` 
     	FOREIGN KEY (`det_cur_id`) 
     	REFERENCES `curso` (`cur_nombre`) 
@@ -53,10 +52,4 @@ CREATE TABLE detalle (
     	ON DELETE CASCADE ON UPDATE CASCADE
 );
 INSERT INTO maestro(mae_usuario, mae_con, mae_correo, mae_nombre, mae_apellido) VALUES("LETYV", "CONLETYV", "lety@lety.com", "Lety", "Vargas");
-select * from maestro;
-
 INSERT INTO estudiante(est_usuario, est_con, est_correo, est_nombre, est_apellido) VALUES("CARLOSG", "CONCARLOSG", "carlos@carlos.com", "Carlos", "Garca");
-
-#INSERT INTO detalle (det_cur_id, det_est_id) VALUES("", "");
-
-SELECT * FROM `detalle`, curso, estudiante WHERE det_cur_id = cur_nombre AND det_est_id = est_usuario AND est_usuario = "CARLOSG";

@@ -27,5 +27,4 @@
             echo "<div class='alert alert-danger'>Campos vacíos</div>";
         }
     }
-
 ?>
