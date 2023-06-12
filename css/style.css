@@ -49,24 +49,51 @@ body {
     height: 10%;
     width: 100%;
     background-color: #cacad862;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+.filtros #labelCategoria{
+    margin-left: 50px;
+    font-weight: 600;
+    color:#4829d1d5;
+    font-size: medium;
 }
 
-.filtros #inputBuscar{
-    height: 70%;
+.filtros #inputCategorias{
+    height: 50px;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+
+.filtros #btnFiltrar{
+    height: 45px;
+}
+
+.filtros .inputBuscar{
+    height: 50px;
     width: 50%;
     border-radius: 20px;
     border: inset;
-    margin-right: 200px;
     text-align: center;
+    margin-right: 30px;
 }
 
-.contenedor{
+
+
+.contenedorHome{
     height: 75%;
     width: 100%;
     background-color: whitesmoke;
     overflow-y: scroll;
 }
 
+.contenedor{
+    height: 85%;
+    width: 100%;
+    background-color: whitesmoke;
+    overflow-y: scroll;
+}
 
 img{
     width: 100%;

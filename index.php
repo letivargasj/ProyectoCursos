@@ -68,7 +68,7 @@
            
             <div class="filtros">
                 <form action="index.php" method="post" >
-                    
+                <label for="filtroCategoria" id="labelCategoria">Buscar por categoria: </label> 
                 <select type="text" name="filtroCategoria" id="inputCategorias" >
                         <option value="">Todos</option>
                         <option value="Ciencias exactas">Ciencias exactas</option>
@@ -83,13 +83,14 @@
                     type="text" 
                     name="buscar" 
                     placeholder="Escribe el nombre de la materia"
+                    class="inputBuscar"
                     id="inputBuscar"
                     >
-                    <input type="submit" name="btnFiltro" class="btn btn-dark" id="btnFiltrar" value="Enviar">
+                    <input type="submit" name="btnFiltro" class="btn btn-dark" id="btnFiltrar" value="Buscar">
                 </form>
             </div>
                 
-            <div class="contenedor">
+            <div class="contenedorHome">
                     <div class="cursos">
                         <?php 
                             while($row = mysqli_fetch_array($query)){
