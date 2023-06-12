@@ -109,9 +109,14 @@
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
                             </div>
                             <div class="botones-curso">
-                                <a href="#" class="btn-curso inscribirme">
-                                    Inscribirme
-                                </a>
+                                <form method="post" action="">
+                                <?php
+                                    include("controlador/controlador_inscribirse.php");
+                                    ?>
+                                    <input name="btninscribirse" class="btn btn-primary btn-lg " type="submit" value="Inscribirse"
+                                            style="padding-left: 2.5rem; padding-right: 2.5rem; ">
+                    
+                                </form>
                             </div>
                         </div>
                         <?php

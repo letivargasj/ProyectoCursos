@@ -39,10 +39,9 @@ CREATE TABLE curso (
 
 
 CREATE TABLE detalle (
-  det_id int(11) NOT NULL AUTO_INCREMENT,
   det_cur_id varchar(100) NOT NULL,
   det_est_id varchar(20) NOT NULL,
-  PRIMARY KEY (det_id),
+  PRIMARY KEY (det_cur_id, det_est_id),
   CONSTRAINT `fk_detalle_curso` 
     	FOREIGN KEY (`det_cur_id`) 
     	REFERENCES `curso` (`cur_nombre`) 
