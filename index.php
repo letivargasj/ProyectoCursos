@@ -116,7 +116,7 @@
                             </div>
                             <div class="botones-curso">
                                 <form method="post" action="">
-                                <?php
+                                    <?php
                                     include("controlador/controlador_inscribirse.php");
                                     ?>
                                     <input name="btninscribirse" class="btn btn-primary btn-lg " type="submit" value="Inscribirse"
