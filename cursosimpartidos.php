@@ -1,8 +1,16 @@
-<?
+<?php
+    include "conexion.php";
     session_start();
-    include("conexion.php");
+    if(empty($_SESSION["usuario"])){
+        header("location: login.php");
+    }
+    if($_SESSION["tipo"] == "est"){
+        header("location: index.php");
+    }
+
+    $usuario =$_SESSION["usuario"];
     $conn = conectar();
-    $sql  = "SELECT * FROM curso";
+    $sql  = "SELECT * FROM curso WHERE cur_mae_id = '$usuario'";
     $query = mysqli_query($conn, $sql);
 ?>
 
