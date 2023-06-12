@@ -2,7 +2,8 @@
     session_start();
     include("conexion.php");
     $conn = conectar();
-    $sql  = "SELECT * FROM curso";
+    $usuario = $_SESSION["usuario"];
+    $sql = "SELECT * FROM curso WHERE cur_mae_id = '$usuario'";
     $query = mysqli_query($conn, $sql);
 ?>
 
