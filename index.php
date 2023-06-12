@@ -2,10 +2,33 @@
     session_start();
     include("conexion.php");
     $conn = conectar();
-    $sql  = "SELECT * FROM curso";
+    $sql  = "SELECT * FROM curso $where";
     $query = mysqli_query($conn, $sql);
 
+    $where = "";
+    $categoria = $_POST['filtroCategoria'];
+    $nombre = $_POST['buscar'];
+
+    if(!empty($_POST["btnFiltro"])){
+        if (empty($_POST['filtroCategoria'])){
+
+            $where = "WHERE cur_nombre = '".$nombre."%'";
+            
+        }else if (empty($_POST['buscar'])){
+            
+            $where = "WHERE cur_categoria = '".$categoria."'";
+            
+        } else{
+            $where  = "WHERE cur_categoria = '".$categoria."' AND cur_nombre = '".$nombre."%'";
+        }
+    }
+    
+
+    $row = mysqli_fetch_array($query)
+
 ?>
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -14,8 +37,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="/css/stylehome.css">
-        <link rel="stylesheet" href="/css/cursosimpartidos.css">
+        <link rel="stylesheet" href="/css/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         
@@ -43,52 +65,60 @@
                 <a class="nav" href="./login.php" id="login">Login</a>
             </div>
             <div class="menuCategorias">
-                <div class="cat" id="todos">Todos</div> 
-                <div class="cat" id="exactas">Ciencias exactas</div>            
-                <div class="cat" id="naturales">Ciencias naturales</div>
-                <div class="cat" id="humanidades">Humanidades</div>
-                <div class="cat" id="geografia">Geografia</div>
-                <div class="cat" id="historia">Historia</div>
-                <div class="cat" id="idiomas">Idiomas</div>
-                <div class="cat" id="Arte">Arte</div>
-            </div>
-
-            
-            <div class="contenedor">
-                <div class="buscador" id="buscador" >
-                    <input type="text" id="inputBuscador" class="inputBuscador" placeholder="Escribe el nombre de la materia">
-                </div>
                 
-                <div class="cartaCurso">
-                    <div class="cursos">
-                        <?php 
-                            while($row = mysqli_fetch_array($query)){
-                        ?>
-                        <div class="contenedor-card">
-                        
+                <form action="index.php" method="post">
+                    <input 
+                    type="text" 
+                    name="buscar" 
+                    placeholder="Escribe el nombre de la materia">
+  
+                    <select type="text" name="filtroCategoria" >
+                        <option value="">Todos</option>
+                        <option value="Ciencias exactas">Ciencias exactas</option>
+                        <option value="Ciencias naturales">Ciencias naturales</option>
+                        <option value="Humanidades">Humanidades</option>
+                        <option value="Geografia">Geografia</option>
+                        <option value="Historia">Historia</option>
+                        <option value="Idiomas">Idiomas</option>
+                        <option value="Arte">Arte</option>
+                    </select>
+                    <input type="submit" class="btn" value="btnFiltro">
+
+                </form>
+            </div>
+                
+                <div class="contenedor">
+                    <div class="cartaCurso">
+                        <div class="cursos">
+                            <?php 
+                                while($row = mysqli_fetch_array($query)){
+                            ?>
+                            <div class="contenedor-card">
                             <div class="img-curso">
                                 <img src="<?php echo $row['cur_imagen'] ?>" class="image-curso">
                             </div>
-                            <div class="titulo-curso">
-                                <h2 class="titulo-curso-h2"><?php echo $row['cur_nombre'] ?></h2>
+                                <div class="titulo-curso">
+                                    <h2 class="titulo-curso-h2"><?php echo $row['cur_nombre'] ?></h2>
+                                </div>
+                                <div class="categoria-curso">
+                                    <h2 class="titulo-curso-h2"><?php echo $row['cur_categoria'] ?></h2>
+                                </div>
+                                <div class="duracion-curso">
+                                    <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
+                                </div>
+                                <div class="botones-curso">
+                                    <a href="#" class="btn-curso inscribirme">
+                                        Inscribirme
+                                    </a>
+                                </div>
                             </div>
-                            <div class="categoria-curso">
-                                <h2 class="titulo-curso-h2"><?php echo $row['cur_categoría'] ?></h2>
-                            </div>
-                            <div class="duración-curso">
-                                <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
-                            </div>
-                            <div class="botones-curso">
-                                <a href="#" class="btn-curso borrar">
-                                    Inscribirme
-                                </a>
-                            </div>
+                            
+                            <?php
+                                }
+                            ?> 
+                            
                         </div>
-                        <?php
-                            }
-                        ?> 
                     </div>
-                </div>
             </div>
         </div>       
 

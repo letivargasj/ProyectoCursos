@@ -46,14 +46,17 @@
             <div class="formulario">
                 <h1>Agrega un curso nuevo</h1>
                 <form method="post" action="">
-                        
-                        <?php
-                        include "./insertar.php" ;
-                        ?>
+                    <?php
+                    include "./insertar.php" ;
+                    ?>
+                    <label for="cur_nombre"> Nombre del curso:</label>
                     <input type="text" name="cur_nombre" class="form-control mb-3" placeholder="Escribe el nombre" >
+                    
+                    <label for="cur_duracion"> Duración del curso (horas):</label>
                     <input type="text" name="cur_duracion" class="form-control mb-3" placeholder="Escribe la duración" >
+                    
+                    <label for="cur_categoria"> Escoge categoria</label>
                     <select type="text" name="cur_categoria" class="form-select mb-3" >
-                        <option selected>Escoge una categoria...</option>
                         <option value="Ciencias exactas">Ciencias exactas</option>
                         <option value="Ciencias naturales">Ciencias naturales</option>
                         <option value="Humanidades">Humanidades</option>
