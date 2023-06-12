@@ -13,7 +13,7 @@
             $categoria = $_POST['cur_categoria'];
             $imagen = $_POST['cur_imagen'];
                 
-            $sql  = "INSERT INTO curso (cur_nombre, cur_categoría, cur_duracion, cur_imagen, cur_mae_id) 
+            $sql  = "INSERT INTO curso (cur_nombre, cur_categoria, cur_duracion, cur_imagen, cur_mae_id) 
                              VALUES('$nombre','$categoria','$duracion','images/$imagen','$usuario')";
           
             $query = mysqli_query($conn, $sql);

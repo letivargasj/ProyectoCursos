@@ -20,23 +20,23 @@
 <body>
     <div class="principal">
         <div class="navegador" id="navbar" >
-                    <a id="logo">
-                        <img class="imgLogo" src="./images/logo2.png" id="logo">
-                    </a>
-                    <a class="nav" href="/index.php" id="home">Home</a>
-                    <a class="nav" href="/miscursos.php" id="misCursos">Mis cursos</a>
-                    <a class="nav" href="/agregarcurso.php" id="agregarCurso" >Agregar Curso</a>
-                    <a class="nav" href="/cursosimpartidos.php" id="cursosImpartidos">Cursos Impartidos</a>
-                    <a class="nav" href="/nosotros.php" id="nosotros">Nosotros</a>
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Perfil
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="./controlador/controlador_cerrarsession.php">Salir</a></li>
-                        </ul>
-                    </div>
-                    <a class="nav" href="./login.php" id="login">Login</a>
+            <a id="logo">
+                <img class="imgLogo" src="./images/logo2.png" id="logo">
+            </a>
+            <a class="nav" href="/index.php" id="home">Home</a>
+            <a class="nav" href="/miscursos.php" id="misCursos">Mis cursos</a>
+            <a class="nav" href="/agregarcurso.php" id="agregarCurso" >Agregar Curso</a>
+            <a class="nav" href="/cursosimpartidos.php" id="cursosImpartidos">Cursos Impartidos</a>
+            <a class="nav" href="/nosotros.php" id="nosotros">Nosotros</a>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Perfil
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="./controlador/controlador_cerrarsession.php">Salir</a></li>
+                    <li><a class="dropdown-item" href="./login.php">Login</a></li>
+                </ul>
+            </div>
         </div>   
         <div class="clearfix"></div>
         <div class="header-nosotros">
