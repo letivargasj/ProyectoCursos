@@ -89,15 +89,14 @@
                 
                 <div class="contenedor">
                     <div class="cartaCurso">
-                        
                         <div class="cursos">
                             <?php 
                                 while($row = mysqli_fetch_array($query)){
                             ?>
                             <div class="contenedor-card">
-                                <div class="image-curso">
-                                    <img src="./images/math.jpg" class="image-curso">
-                                </div>
+                            <div class="img-curso">
+                                <img src="<?php echo $row['cur_imagen'] ?>" class="image-curso">
+                            </div>
                                 <div class="titulo-curso">
                                     <h2 class="titulo-curso-h2"><?php echo $row['cur_nombre'] ?></h2>
                                 </div>
