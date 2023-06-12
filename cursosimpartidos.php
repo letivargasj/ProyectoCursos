@@ -70,11 +70,7 @@
                             <div class="duracion-curso">
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
                             </div>
-                            <div class="botones-curso">
-                                <a href="#" class="btn-curso inscribirme">
-                                    Inscribirme
-                                </a>
-                            </div>
+
                         </div>
                         <?php
                             }
