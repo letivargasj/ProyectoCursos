@@ -56,4 +56,7 @@ INSERT INTO maestro(mae_usuario, mae_con, mae_correo, mae_nombre, mae_apellido) 
 select * from maestro;
 
 INSERT INTO estudiante(est_usuario, est_con, est_correo, est_nombre, est_apellido) VALUES("CARLOSG", "CONCARLOSG", "carlos@carlos.com", "Carlos", "Garca");
-select * from estudiante;
+
+#INSERT INTO detalle (det_cur_id, det_est_id) VALUES("", "");
+
+SELECT * FROM `detalle`, curso, estudiante WHERE det_cur_id = cur_nombre AND det_est_id = est_usuario AND est_usuario = "CARLOSG";
