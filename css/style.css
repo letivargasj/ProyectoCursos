@@ -80,17 +80,22 @@ body {
 }
 
 .contenedorHome{
-    height: 75%;
+    height: 70%;
     width: 100%;
     background-color: whitesmoke;
     overflow-y: scroll;
 }
 
 .contenedor{
-    height: 85%;
+    height: 80%;
     width: 100%;
     background-color: whitesmoke;
     overflow-y: scroll;
+}
+
+.footer{
+    height: 5%;
+    width: 100%;
 }
 
 img{
@@ -261,7 +266,7 @@ img{
     margin: 0px auto;
     height: 50px;
     width: 100%;
-    background: #00262B;
+    background: #3C3C3C;
     text-align: center;
 }
 
