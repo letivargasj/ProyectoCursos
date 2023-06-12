@@ -2,32 +2,33 @@
     session_start();
     include("conexion.php");
     $conn = conectar();
-    $sql  = "SELECT * FROM curso $where";
+    $sql  = "SELECT * FROM curso";
     $query = mysqli_query($conn, $sql);
 
-    $where = "";
     $categoria = $_POST['filtroCategoria'];
     $nombre = $_POST['buscar'];
 
-    if(!empty($_POST["btnFiltro"])){
-        if (empty($_POST['filtroCategoria'])){
+    if(!empty($_POST["btnFiltro"])) {
 
-            $where = "WHERE cur_nombre = '".$nombre."%'";
+        if ((!empty($_POST['filtroCategoria'])) && (!empty($_POST['buscar']))){
+            $sql  = "SELECT * FROM curso WHERE cur_categoria = '$categoria' AND cur_nombre = '$nombre'";
+            $query = mysqli_query($conn, $sql);
+
+        }else if((empty($_POST['filtroCategoria'])) && (!empty($_POST['buscar']))){    
+            $sql  = "SELECT * FROM curso WHERE cur_nombre = '$nombre'";
+            $query = mysqli_query($conn, $sql);
+
+        }else if ((!empty($_POST['filtroCategoria'])) && (empty($_POST['buscar']))){
+            $sql  = "SELECT * FROM curso WHERE cur_categoria = '$categoria'";
+            $query = mysqli_query($conn, $sql);
             
-        }else if (empty($_POST['buscar'])){
-            
-            $where = "WHERE cur_categoria = '".$categoria."'";
-            
-        } else{
-            $where  = "WHERE cur_categoria = '".$categoria."' AND cur_nombre = '".$nombre."%'";
+        } else { 
+            $sql  = "SELECT * FROM curso";
+            $query = mysqli_query($conn, $sql);
+
         }
     }
-    
-
-    $row = mysqli_fetch_array($query)
-
 ?>
-
 
 <!doctype html>
 <html lang="en">
@@ -64,15 +65,11 @@
                 </div>
                 <a class="nav" href="./login.php" id="login">Login</a>
             </div>
-            <div class="menuCategorias">
-                
-                <form action="index.php" method="post">
-                    <input 
-                    type="text" 
-                    name="buscar" 
-                    placeholder="Escribe el nombre de la materia">
-  
-                    <select type="text" name="filtroCategoria" >
+           
+            <div class="filtros">
+                <form action="index.php" method="post" >
+                    
+                <select type="text" name="filtroCategoria" id="inputCategorias" >
                         <option value="">Todos</option>
                         <option value="Ciencias exactas">Ciencias exactas</option>
                         <option value="Ciencias naturales">Ciencias naturales</option>
@@ -82,42 +79,43 @@
                         <option value="Idiomas">Idiomas</option>
                         <option value="Arte">Arte</option>
                     </select>
-                    <input type="submit" class="btn" value="btnFiltro">
-
+                    <input 
+                    type="text" 
+                    name="buscar" 
+                    placeholder="Escribe el nombre de la materia"
+                    id="inputBuscar"
+                    >
+                    <input type="submit" name="btnFiltro" class="btn btn-dark" id="btnFiltrar" value="Enviar">
                 </form>
             </div>
                 
-                <div class="contenedor">
-                    <div class="cartaCurso">
-                        <div class="cursos">
-                            <?php 
-                                while($row = mysqli_fetch_array($query)){
-                            ?>
-                            <div class="contenedor-card">
-                            <div class="img-curso">
-                                <img src="<?php echo $row['cur_imagen'] ?>" class="image-curso">
-                            </div>
-                                <div class="titulo-curso">
-                                    <h2 class="titulo-curso-h2"><?php echo $row['cur_nombre'] ?></h2>
-                                </div>
-                                <div class="categoria-curso">
-                                    <h2 class="titulo-curso-h2"><?php echo $row['cur_categoria'] ?></h2>
-                                </div>
-                                <div class="duracion-curso">
-                                    <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
-                                </div>
-                                <div class="botones-curso">
-                                    <a href="#" class="btn-curso inscribirme">
-                                        Inscribirme
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <?php
-                                }
-                            ?> 
-                            
+            <div class="contenedor">
+                    <div class="cursos">
+                        <?php 
+                            while($row = mysqli_fetch_array($query)){
+                        ?>
+                        <div class="contenedor-card">
+                        <div class="img-curso">
+                            <img src="<?php echo $row['cur_imagen'] ?>" class="image-curso">
                         </div>
+                            <div class="titulo-curso">
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_nombre'] ?></h2>
+                            </div>
+                            <div class="categoria-curso">
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_categoria'] ?></h2>
+                            </div>
+                            <div class="duracion-curso">
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
+                            </div>
+                            <div class="botones-curso">
+                                <a href="#" class="btn-curso inscribirme">
+                                    Inscribirme
+                                </a>
+                            </div>
+                        </div>
+                        <?php
+                            }
+                        ?> 
                     </div>
             </div>
         </div>       
