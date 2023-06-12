@@ -87,7 +87,6 @@
                     >
                     <input type="submit" name="btnFiltro" class="btn btn-dark" id="btnFiltrar" value="Enviar">
                 </form>
-
             </div>
                 
             <div class="contenedor">
