@@ -63,9 +63,9 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="./controlador/controlador_cerrarsession.php">Salir</a></li>
+                        <li><a class="dropdown-item" href="./login.php">Login</a></li>
                     </ul>
                 </div>
-                <a class="nav" href="./login.php" id="login">Login</a>
             </div>
            
             <div class="filtros">
@@ -125,6 +125,9 @@
                         ?> 
                     </div>
             </div>
+            <footer class="footer">
+                <h2>Todos los derechos reservados &copy; 2023 | <span> Ensigna </span></h2>
+            </footer>
         </div>       
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

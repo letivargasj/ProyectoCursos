@@ -1,9 +1,18 @@
-<?
+<?php
+    include "conexion.php";
     session_start();
-    include("conexion.php");
+    if(empty($_SESSION["usuario"])){
+        header("location: login.php");
+    }
+    if($_SESSION["tipo"] == "est"){
+        header("location: index.php");
+    }
+
+    $usuario =$_SESSION["usuario"];
     $conn = conectar();
-    $usuario = $_SESSION["usuario"];
-    $sql = "SELECT * FROM curso WHERE cur_mae_id = '$usuario'";
+
+    $sql  = "SELECT * FROM curso WHERE cur_mae_id = '$usuario'";
+
     $query = mysqli_query($conn, $sql);
 ?>
 
@@ -61,17 +70,16 @@
                             <div class="duracion-curso">
                                 <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
                             </div>
-                            <div class="botones-curso">
-                                <a href="#" class="btn-curso inscribirme">
-                                    Inscribirme
-                                </a>
-                            </div>
+
                         </div>
                         <?php
                             }
                         ?> 
                     </div>
             </div>
+            <footer class="footer">
+                <h2>Todos los derechos reservados &copy; 2023 | <span> Ensigna </span></h2>
+            </footer>
         </div>       
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
