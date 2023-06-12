@@ -10,7 +10,9 @@
 
     $usuario =$_SESSION["usuario"];
     $conn = conectar();
+
     $sql  = "SELECT * FROM curso WHERE cur_mae_id = '$usuario'";
+
     $query = mysqli_query($conn, $sql);
 ?>
 
