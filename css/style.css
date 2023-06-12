@@ -45,54 +45,13 @@ body {
     padding: 20px;
 }
 
-.menuCategorias {
-    height: 85%;
-    width: 15%;
-    background-color: #cacad862;
-}
-
-.cat{
-    margin-top: 20px;
-    margin-left: 25px;
-    display: flex;
-    flex-direction: row-reverse;
-    align-content: flex-start;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #7C348C;
-    border-right-style: inset; 
-    
-    
-}
-.cat:hover {
-    cursor: pointer;
-    background-color: #6694c9;
-    color:whitesmoke;
-    border-radius: 5px;
-    padding: 10px;
-}
-.contenedor{
-    height: 85%;
-    width: 85%;
-    background-color: whitesmoke;
-}
-
-.buscador{
+.filtros {
     height: 10%;
     width: 100%;
     background-color: #cacad862;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5px;
 }
 
-.inputBuscador{
+.filtros #inputBuscar{
     height: 70%;
     width: 50%;
     border-radius: 20px;
@@ -101,11 +60,13 @@ body {
     text-align: center;
 }
 
-.cartaCurso{
-    height: 90%;
+.contenedor{
+    height: 75%;
     width: 100%;
+    background-color: whitesmoke;
     overflow-y: scroll;
 }
+
 
 img{
     width: 100%;
@@ -127,7 +88,7 @@ img{
 }
 
 .contenedor-card{
-    width: 250px;
+    width: 250px!important;
     border: 1px solid #ccc;
     border-radius:30px 30px;
     padding: 15px;
@@ -144,6 +105,8 @@ img{
 }
 
 .contenedor-card .image-curso{
+    width: 100%!important;
+    height: 180px!important;
     border-radius: 30px;
 }
 
