@@ -208,6 +208,55 @@ img{
     border: 1px solid white;
 }
 
+.formulario{
+    width: 700px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 5px rgba(0,0,0,1);
+    margin: 20px auto;
+    padding: 50px;
+    border-radius: 10px;
+
+}
+
+.formulario h1{
+    padding: 10px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #A32FC0;
+}
+
+.formulario-header{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.formulario-header .form-img{
+    width: 150px;
+    padding: 5px;
+    margin: 0px auto;
+}
+
+.formulario label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.centrar-btn{
+    margin: 0px auto;
+    width: 200px;
+    padding: 10px;
+}
+
+.formulario .btn-insertar{
+    background: #A32FC0;
+}
+
+.formulario .btn-insertar:hover{
+    background: #712b82;
+}
+
 .footer{
     margin: 0px auto;
     height: 50px;
