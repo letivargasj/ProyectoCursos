@@ -83,7 +83,7 @@
             </div>
         </div>
 
-        <footer>
+        <footer class="footer">
             <h2>Todos los derechos reservados &copy; 2023 | <span> Ensigna </span></h2>
         </footer>
 
