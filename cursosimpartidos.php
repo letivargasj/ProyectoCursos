@@ -7,74 +7,83 @@
     if($_SESSION["tipo"] == "est"){
         header("location: index.php");
     }
+
+    $usuario =$_SESSION["usuario"];
+    $conn = conectar();
+
+    $sql  = "SELECT * FROM curso WHERE cur_mae_id = '$usuario'";
+
+    $query = mysqli_query($conn, $sql);
 ?>
 
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos en Línea</title>
-    <link rel="stylesheet" href="/css/stylehome.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/cursosimpartidos.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="principal">
-        <div class="navegador" id="navbar" >
-            <a id="logo">
-                <img class="imgLogo" src="./images/logo2.png" id="logo">
-            </a>
-            <a class="nav" href="./index.php" id="home">Home</a>
-            <a class="nav" href="./miscursos.php" id="misCursos">Mis cursos</a>
-            <a class="nav" href="./agregarcurso.php" id="agregarCurso" >Agregar Curso</a>
-            <a class="nav" href="./cursosimpartidos.php" id="cursosImpartidos">Cursos Impartidos</a>
-            <a class="nav" href="./nosotros.php" id="nosotros">Nosotros</a>
-            <a class="nav" href="#" id="perfil">Perfil</a>
-        </div>
-        <div class="clearfix"></div>
-
-        <div class="clearfix"></div>
-
-        <div class="clearfix"></div>
-
-        <section class="cursos">
-            <div class="titulo">
-                <h2 class="titulo-h2">Cursos Impartidos</h2>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <div class="contenedor-card">
-                <div class="img-curso">
-                    <img src="./images/math.jpg" alt="Matemáticas" class="image-curso">
-                </div>
-                <div class="titulo-curso">
-                    <h2 class="titulo-curso-h2">Matemáticas 1° Grado</h2>
-                </div>
-                <div class="descripcion-curso">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, voluptates?</p>
-                    <p>Duración: <span class="duracion"> 30 horas </span></p>
-                </div>
-                <div class="botones-curso">
-                    <a href="#" class="btn-curso info">
-                        Información
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        
+        <title>ENSIGNA</title>
+    </head>
+    <body>
+        <div class="principal">
+            <div class="navegador" id="navbar" >
+                <a id="logo">
+                    <img class="imgLogo" src="./images/logo2.png" id="logo">
+                </a>
+                <a class="nav" href="/index.php" id="home">Home</a>
+                <a class="nav" href="/miscursos.php" id="misCursos">Mis cursos</a>
+                <a class="nav" href="/agregarcurso.php" id="agregarCurso" >Agregar Curso</a>
+                <a class="nav" href="/cursosimpartidos.php" id="cursosImpartidos">Cursos Impartidos</a>
+                <a class="nav" href="/nosotros.php" id="nosotros">Nosotros</a>
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        Perfil
                     </a>
-
-                    <a href="#" class="btn-curso borrar">
-                        Quitar Curso
-                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="./controlador/controlador_cerrarsession.php">Salir</a></li>
+                    </ul>
                 </div>
+                <a class="nav" href="./login.php" id="login">Login</a>
             </div>
+                
+            <div class="contenedor">
+                    <div class="cursos">
+                        <?php 
+                            while($row = mysqli_fetch_array($query)){
+                        ?>
+                        <div class="contenedor-card">
+                        <div class="img-curso">
+                            <img src="<?php echo $row['cur_imagen'] ?>" class="image-curso">
+                        </div>
+                            <div class="titulo-curso">
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_nombre'] ?></h2>
+                            </div>
+                            <div class="categoria-curso">
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_categoria'] ?></h2>
+                            </div>
+                            <div class="duracion-curso">
+                                <h2 class="titulo-curso-h2"><?php echo $row['cur_duracion'] ?> horas</h2>
+                            </div>
 
-        </section>
+                        </div>
+                        <?php
+                            }
+                        ?> 
+                    </div>
+            </div>
+            <footer class="footer">
+                <h2>Todos los derechos reservados &copy; 2023 | <span> Ensigna </span></h2>
+            </footer>
+        </div>       
 
-        <footer>
-            <h2 class="title-footer">Todos los Derechos Reservados &copy; 2023 Ensigna</h2>
-        </footer>
-    </div>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+
 </html>

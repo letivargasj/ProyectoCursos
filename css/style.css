@@ -1,0 +1,281 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.principal{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+#navbar {
+    height: 15%;
+    width: 100%;
+    background: #3C3C3C;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    text-decoration: none;
+}
+
+#logo {
+    height: 100%;
+    width: auto;
+}
+
+.nav {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.nav:hover {
+    cursor: pointer;
+    background-color: rgba(131, 131, 131, 0.61);
+    color:#f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.filtros {
+    height: 10%;
+    width: 100%;
+    background-color: #cacad862;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+.filtros #labelCategoria{
+    margin-left: 50px;
+    font-weight: 600;
+    color:#4829d1d5;
+    font-size: medium;
+}
+
+.filtros #inputCategorias{
+    height: 50px;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+
+.filtros #btnFiltrar{
+    height: 45px;
+}
+
+.filtros .inputBuscar{
+    height: 50px;
+    width: 50%;
+    border-radius: 20px;
+    border: inset;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.contenedorHome{
+    height: 70%;
+    width: 100%;
+    background-color: whitesmoke;
+    overflow-y: scroll;
+}
+
+.contenedor{
+    height: 80%;
+    width: 100%;
+    background-color: whitesmoke;
+    overflow-y: scroll;
+}
+
+.footer{
+    height: 5%;
+    width: 100%;
+}
+
+img{
+    width: 100%;
+}
+
+.cursos{
+    width: 100%;
+    padding: 20px;
+    float: left;
+}
+
+.cursos .titulo{
+   background: rgba(0,0,0,.05);
+   width: 500px;
+   border-radius: 30px;
+   text-align: center;
+   box-shadow: 0 5px 3px rgba(0,0,0,.5);
+   margin-bottom: 20px;
+}
+
+.contenedor-card{
+    width: 250px!important;
+    border: 1px solid #ccc;
+    border-radius:30px 30px;
+    padding: 15px;
+    margin: 20px;
+    opacity: .8;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.5);
+    float: left;
+}
+
+.contenedor-card:hover{
+    opacity: 1;
+    border: 1px solid black;
+    box-shadow: 0px 3px 5px rgba(0,0,0,1);
+}
+
+.contenedor-card .image-curso{
+    width: 100%!important;
+    height: 180px!important;
+    border-radius: 30px;
+}
+
+.contenedor-card .titulo-curso{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.contenedor-card .titulo-curso-h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.contenedor-card .categoria-curso{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 17px;
+}
+
+.contenedor-card .duracion-curso{
+    color: rgb(109, 109, 109);
+    font-size: 12px;
+}
+
+.botones-curso{
+    width: 100%;
+    text-align: center;
+}
+
+.btn-curso{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;font-family: Arial, Helvetica, sans-serif;
+}
+
+.info{
+    border: 1px solid green;
+    color: green;
+    transition: all .6s ease;
+}
+
+.borrar{
+    border: 1px solid red;
+    color: red;
+    transition: all .6s ease;
+}
+
+.inscribirme{
+    border: 1px solid rgb(136, 14, 192);
+    color: rgb(125, 37, 197);
+    transition: all .6s ease;
+}
+
+.info:hover{
+    background: green;
+    color: white;
+    border: 1px solid white;
+}
+
+.borrar:hover{
+    background: red;
+    color: white;
+    border: 1px solid white;
+}
+
+.inscribirme:hover{
+    background: rgb(142, 10, 182);
+    color: white;
+    border: 1px solid white;
+}
+
+.formulario{
+    width: 700px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 5px rgba(0,0,0,1);
+    margin: 20px auto;
+    padding: 50px;
+    border-radius: 10px;
+
+}
+
+.formulario h1{
+    padding: 10px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #A32FC0;
+}
+
+.formulario-header{
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.formulario-header .form-img{
+    width: 150px;
+    padding: 5px;
+    margin: 0px auto;
+}
+
+.formulario label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.centrar-btn{
+    margin: 0px auto;
+    width: 200px;
+    padding: 10px;
+}
+
+.formulario .btn-insertar{
+    background: #A32FC0;
+}
+
+.formulario .btn-insertar:hover{
+    background: #712b82;
+}
+
+.footer{
+    margin: 0px auto;
+    height: 50px;
+    width: 100%;
+    background: #3C3C3C;
+    text-align: center;
+}
+
+.footer h2{
+    color: white;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.footer h2 span{
+    color: #D23228;
+}
